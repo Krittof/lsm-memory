@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=68.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "lsm-memory"
+version = "0.4.0"
+description = "1C1G-friendly, pure-stdlib cross-network memory vault, WebUI bridge, and offline consolidator for local-shell-mcp (LSM)."
+readme = "README.md"
+requires-python = ">=3.11"
+license = {text = "MIT"}
+dependencies = []
+
+[project.scripts]
+lsm-memory = "lsm_memory.cli:main"
+lsm-memory-daemon = "lsm_memory.daemon:main"
+lsm-memory-mcp = "lsm_memory.mcp_server:main"
+lsm-memory-patch = "lsm_memory.lsm_patcher:main"
+lsm-memory-consolidate = "lsm_memory.consolidator:main"
+lsm-memory-sync = "lsm_memory.vector_sync:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["lsm_memory*"]
